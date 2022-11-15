@@ -29,28 +29,57 @@ public class Magpie4
      *            the user statement
      * @return a response based on the rules given
      */
-    public String getResponse(String statement)
+  private void setState(int currState){
+    switch (currState) {
+      case 1:
+        System.out.println("I love that game! What do you like about it?");
+        break;
+      case 2:
+        System.out.println("Say something, please.");
+        break;
+      case 3:
+        System.out.println("That is a good genre. Which game do you like in it?");
+        break;
+      case 4:
+        System.out.println("What genres do you enjoy?");
+        break;
+      case 5:
+        likeGame();
+        break;
+      case 6:
+        getRandomResponse();
+        break;
+      case 7:
+        greeting();
+        break;
+      case 8:
+        gameplay();
+        break;
+    }
+    
+    public String parseInput(String statement)
     {
         String response = "";
+        int currState=0;
         if (statement.length() == 0)
         {
-            response = "Say something, please.";
+            currState=2;
         }
         else if (findKeyword(statement, "bad") >= 0)
         {
-            response = "What don't you like about it?";
+            currState=1;
         }
         else if (findKeyword(statement, "boring") >= 0)
         {
-            response = "What kinds of games do you find fun?";
+            currState=3;
         }
         else if (findKeyword(statement, "fun") >= 0)
         {
-            response = "I find it fun!";
-        }
+          currState=4;
+  }
         else if (findKeyword(statement, "good") >= 0)
         {
-            response = "What do you like about it?";
+            currState=5;
         }
         else if (findKeyword(statement, "first person") >= 0
                 || findKeyword(statement, "fps") >= 0
@@ -63,7 +92,7 @@ public class Magpie4
                 || findKeyword(statement, "battle royale") >= 0
                 || findKeyword(statement, "platformer") >= 0)
         {
-            response=getGenre();
+            currState=6;
         }        
         else if (findKeyword(statement, "mario") >= 0
                 || findKeyword(statement, "cyberpunk") >= 0
@@ -77,7 +106,7 @@ public class Magpie4
                 || findKeyword(statement, "zelda") >= 0
                 || findKeyword(statement, "red dead") >= 0)
         {
-            response=likeGame(statement);
+            currState=7;
         }
         else if (findKeyword(statement, "graphics") >= 0
                 || findKeyword(statement, "gameplay") >= 0
@@ -88,7 +117,7 @@ public class Magpie4
                 || findKeyword(statement, "character") >= 0
                 || findKeyword(statement, "combat") >= 0)
         {
-            response=gameplay();
+            currState=8;
         }
           else if (findKeyword(statement, "hi") >= 0
                 || findKeyword(statement, "hello") >= 0
