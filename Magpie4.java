@@ -119,70 +119,70 @@ public class Magpie4
         {
             currState=8;
         }
-          else if (findKeyword(statement, "hi") >= 0
-                || findKeyword(statement, "hello") >= 0
-                || findKeyword(statement, "hey") >= 0
-                || findKeyword(statement, "ok") >= 0)
-        {
-            response=greeting();
-        }
-            else if (findKeyword(statement, "yes") >= 0)
-        {
-            response = "Nice! Why do you say "+statement;
-        }
-              else if (findKeyword(statement, "no") >= 0)
-        {
-            response = "Aw man... Why do you say "+statement;
-        }
-                else if (findKeyword(statement, "not played") >= 0)
-        {
-            response = "You should try it!";
-        }
-                  else if (findKeyword(statement, "played") >= 0)
-        {
-            response = "Unfortunately not... have you?";
-        }  else if (findKeyword(statement, "peach") >= 0)
-        {
-            response = "That's me!";
-        } //QUOTES-------------------------------------
-        else if (findKeyword(statement, "kratos") >= 0)
-        {
-            response = "Boy! Don't Be Sorry, Be Better.";
+//           else if (findKeyword(statement, "hi") >= 0
+//                 || findKeyword(statement, "hello") >= 0
+//                 || findKeyword(statement, "hey") >= 0
+//                 || findKeyword(statement, "ok") >= 0)
+//         {
+//             response=greeting();
+//         }
+//             else if (findKeyword(statement, "yes") >= 0)
+//         {
+//             response = "Nice! Why do you say "+statement;
+//         }
+//               else if (findKeyword(statement, "no") >= 0)
+//         {
+//             response = "Aw man... Why do you say "+statement;
+//         }
+//                 else if (findKeyword(statement, "not played") >= 0)
+//         {
+//             response = "You should try it!";
+//         }
+//                   else if (findKeyword(statement, "played") >= 0)
+//         {
+//             response = "Unfortunately not... have you?";
+//         }  else if (findKeyword(statement, "peach") >= 0)
+//         {
+//             response = "That's me!";
+//         } //QUOTES-------------------------------------
+//         else if (findKeyword(statement, "kratos") >= 0)
+//         {
+//             response = "Boy! Don't Be Sorry, Be Better.";
           
-        } else if (findKeyword(statement, "silverhand") >= 0)
-        {
-            response = " Give yourself time. Ideas'll come. Life'll shake you, roll you, maybe embrace you.";
-        }else if (findKeyword(statement, "luigi") >= 0)
-        {
-            response = "I wanna be a great plumber like my brother Mario.";
-        }else if (findKeyword(statement, "winston") >= 0)
-        {
-            response = "Never accept the world as it appears to be, dare to see it for what it could be.";
-        }else if (findKeyword(statement, "ezio") >= 0)
-        {
-            response = "There Is No Book Or Teacher To Give You The Answers, Show You The Path.";
-        }else if (findKeyword(statement, "marston") >= 0)
-        {
-            response = "Some trees flourish, others die. Some cattle grow strong, others are taken by wolves. Some men are born rich enough and dumb enough to enjoy their lives. Ain't nothing fair. You know that.";
-        }else if (findKeyword(statement, "batman") >= 0)
-        {
-            response = "B: You want to know something funny? Even after everything you've done, I would have saved you. J: Actually that is pretty funny.";
-        }else if (findKeyword(statement, "witcher") >= 0)
-        {
-            response = "Hatred and prejudice will never be eradicated. And the witch hunts will never be about witches. To have a scapegoat, that's the key.";
-        }else if (findKeyword(statement, "zelda") >= 0)
-        {
-            response = "A sword wields no strength unless the hands that holds it has courage.";
-        }else if (findKeyword(statement, "spiderman") >= 0)
-        {
-            response = "You do what you think is best, Doc. It’s all any of us can… even when it hurts like Hell.";
-        }
+//         } else if (findKeyword(statement, "silverhand") >= 0)
+//         {
+//             response = " Give yourself time. Ideas'll come. Life'll shake you, roll you, maybe embrace you.";
+//         }else if (findKeyword(statement, "luigi") >= 0)
+//         {
+//             response = "I wanna be a great plumber like my brother Mario.";
+//         }else if (findKeyword(statement, "winston") >= 0)
+//         {
+//             response = "Never accept the world as it appears to be, dare to see it for what it could be.";
+//         }else if (findKeyword(statement, "ezio") >= 0)
+//         {
+//             response = "There Is No Book Or Teacher To Give You The Answers, Show You The Path.";
+//         }else if (findKeyword(statement, "marston") >= 0)
+//         {
+//             response = "Some trees flourish, others die. Some cattle grow strong, others are taken by wolves. Some men are born rich enough and dumb enough to enjoy their lives. Ain't nothing fair. You know that.";
+//         }else if (findKeyword(statement, "batman") >= 0)
+//         {
+//             response = "B: You want to know something funny? Even after everything you've done, I would have saved you. J: Actually that is pretty funny.";
+//         }else if (findKeyword(statement, "witcher") >= 0)
+//         {
+//             response = "Hatred and prejudice will never be eradicated. And the witch hunts will never be about witches. To have a scapegoat, that's the key.";
+//         }else if (findKeyword(statement, "zelda") >= 0)
+//         {
+//             response = "A sword wields no strength unless the hands that holds it has courage.";
+//         }else if (findKeyword(statement, "spiderman") >= 0)
+//         {
+//             response = "You do what you think is best, Doc. It’s all any of us can… even when it hurts like Hell.";
+//         }
           
-        // Responses which require transformations
-        else if (findKeyword(statement, "I want to", 0) >= 0)
-        {
-            response = transformIWantToStatement(statement);
-        }
+//         // Responses which require transformations
+//         else if (findKeyword(statement, "I want to", 0) >= 0)
+//         {
+//             response = transformIWantToStatement(statement);
+//         }
 
         else
         {
